@@ -2,6 +2,7 @@ package edu.utsa.cs3443.whoson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -30,6 +31,14 @@ public class SettingsActivity extends AppCompatActivity {
             Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
             startActivity(intent);
         });
+
+
+        Button accountButton = findViewById(R.id.account_button);
+        accountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SettingsActivity.this, AcountActivity.class);
+            startActivity(intent);
+        });
+
 
 
 

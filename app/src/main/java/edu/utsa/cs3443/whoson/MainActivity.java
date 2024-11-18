@@ -2,6 +2,7 @@ package edu.utsa.cs3443.whoson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -23,11 +24,26 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+        // Image Button
         ImageButton settingButton = findViewById(R.id.setting_button);
         // Set OnClickListener
         settingButton.setOnClickListener(v -> {
-
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        // Buttons
+        Button friendListButton = findViewById(R.id.friendList_button);
+        Button addFriendButton = findViewById(R.id.addFriend_button);
+
+        friendListButton.setOnClickListener( v -> {
+            Intent intent = new Intent(MainActivity.this, FriendListActivity.class);
+            startActivity(intent);
+        });
+
+        addFriendButton.setOnClickListener( v -> {
+            Intent intent = new Intent(MainActivity.this, AddFriendActivity.class);
             startActivity(intent);
         });
 

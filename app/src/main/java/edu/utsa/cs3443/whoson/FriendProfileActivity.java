@@ -2,7 +2,9 @@ package edu.utsa.cs3443.whoson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,19 +26,26 @@ public class FriendProfileActivity extends AppCompatActivity {
         });
 
 
-//        ImageButton fpHomeButton = findViewById(R.id.fp_home_button);
-//        //  OnClickListener
-//        fpHomeButton.setOnClickListener(v -> {
-//            Intent intent = new Intent(FriendProfileActivity.this, SettingsActivity.class);
-//            startActivity(intent);
-//        });
-//
-//        ImageButton fpSettingButton = findViewById(R.id.sf_home_button);
-//        // OnClickListener
-//        fpSettingButton.setOnClickListener(v -> {
-//
-//            Intent intent = new Intent(FriendProfileActivity.this, MainActivity.class);
-//            startActivity(intent);
-//        });
+        ImageButton fpHomeButton = findViewById(R.id.fp_home_button);
+        //  OnClickListener
+        fpHomeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(FriendProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton fpSettingButton = findViewById(R.id.fp_setting_button);
+        // OnClickListener
+        fpSettingButton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(FriendProfileActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        Button fpMessageButton = findViewById(R.id.fp_message_button);
+
+        fpMessageButton.setOnClickListener(v -> {
+            Intent intent = new Intent(FriendProfileActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 }

@@ -24,31 +24,30 @@ public class SearchFriendActivity extends AppCompatActivity {
 
 
         ImageButton sfHomeButton = findViewById(R.id.sf_setting_button);
-        // Set OnClickListener
+        //  OnClickListener
         sfHomeButton.setOnClickListener(v -> {
             Intent intent = new Intent(SearchFriendActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
 
         ImageButton sfSettingButton = findViewById(R.id.sf_home_button);
-        // Set OnClickListener
+        // OnClickListener
         sfSettingButton.setOnClickListener(v -> {
 
             Intent intent = new Intent(SearchFriendActivity.this, MainActivity.class);
             startActivity(intent);
         });
 
-
         TextInputEditText searchEditText = findViewById(R.id.sf_abc_input);
         Button searchButton = findViewById(R.id.sf_request_button);
 
-        // Set OnClickListener for Search Button
+        // OnClickListener for Search Button
         searchButton.setOnClickListener(v -> {
             String userInput = searchEditText.getText().toString().trim();
             if (userInput.isEmpty()) {
                 Toast.makeText(this, "Please enter a friend's name", Toast.LENGTH_SHORT).show();
             } else {
-                // Perform your search or action with the input
+
                 Toast.makeText(this, "Request Sent to: " + userInput, Toast.LENGTH_SHORT).show();
             }
         });

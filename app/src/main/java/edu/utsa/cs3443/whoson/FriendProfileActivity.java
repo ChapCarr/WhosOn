@@ -25,7 +25,7 @@ public class FriendProfileActivity extends AppCompatActivity {
             return insets;
         });
 
-
+//why not working?
         ImageButton fpHomeButton = findViewById(R.id.fp_home_button);
         //  OnClickListener
         fpHomeButton.setOnClickListener(v -> {

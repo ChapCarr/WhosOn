@@ -1,6 +1,8 @@
 package edu.utsa.cs3443.whoson;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,25 @@ public class PrivacyActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ImageButton sbutton = findViewById(R.id.p_setting_button);
+        // Set OnClickListener
+        sbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(PrivacyActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton hbutton = findViewById(R.id.p_home_button);
+        // Set OnClickListener
+        hbutton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(PrivacyActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+
+
+
+
     }
 }

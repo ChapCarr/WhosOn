@@ -8,19 +8,19 @@
     tools:context=".PrivacyActivity">
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/p_home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="203dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintEnd_toStartOf="@+id/p_setting_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/house" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/p_setting_button"
         android:layout_width="98dp"
         android:layout_height="102dp"
         android:layout_marginEnd="3dp"

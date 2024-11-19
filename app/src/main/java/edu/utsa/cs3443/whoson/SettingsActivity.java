@@ -39,6 +39,12 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Button privacyButton = findViewById(R.id.privacy_button);
+        privacyButton.setOnClickListener(v -> {
+            Intent intent = new Intent(SettingsActivity.this, PrivacyActivity.class);
+            startActivity(intent);
+        });
+
 
 
 

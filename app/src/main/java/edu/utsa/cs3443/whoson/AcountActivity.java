@@ -1,6 +1,8 @@
 package edu.utsa.cs3443.whoson;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,26 @@ public class AcountActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ImageButton af_settingButton = findViewById(R.id.acc_setting_button);
+        // Set OnClickListener
+        af_settingButton.setOnClickListener(v -> {
+            Intent intent = new Intent(AcountActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        ImageButton af_settingHomeButton = findViewById(R.id.acc_home_button);
+        // Set OnClickListener
+        af_settingHomeButton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(AcountActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+
+
+
+
+
     }
 }

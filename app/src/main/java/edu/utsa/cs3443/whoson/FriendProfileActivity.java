@@ -1,6 +1,8 @@
 package edu.utsa.cs3443.whoson;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,21 @@ public class FriendProfileActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+//        ImageButton fpHomeButton = findViewById(R.id.fp_home_button);
+//        //  OnClickListener
+//        fpHomeButton.setOnClickListener(v -> {
+//            Intent intent = new Intent(FriendProfileActivity.this, SettingsActivity.class);
+//            startActivity(intent);
+//        });
+//
+//        ImageButton fpSettingButton = findViewById(R.id.sf_home_button);
+//        // OnClickListener
+//        fpSettingButton.setOnClickListener(v -> {
+//
+//            Intent intent = new Intent(FriendProfileActivity.this, MainActivity.class);
+//            startActivity(intent);
+//        });
     }
 }

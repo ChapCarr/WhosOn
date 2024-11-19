@@ -2,6 +2,7 @@ package edu.utsa.cs3443.whoson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -35,6 +36,12 @@ public class AddFriendActivity extends AppCompatActivity {
         af_settingHomeButton.setOnClickListener(v -> {
 
             Intent intent = new Intent(AddFriendActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        Button searchButton = findViewById(R.id.searchABC_button);
+        searchButton.setOnClickListener(v -> {
+            Intent intent = new Intent(AddFriendActivity.this, SearchFriendActivity.class);
             startActivity(intent);
         });
 

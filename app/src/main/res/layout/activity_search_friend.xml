@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/sf_home_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
             tools:layout_editor_absoluteY="6dp" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/sf_setting_button"
             android:layout_width="82dp"
             android:layout_height="84dp"
             android:layout_marginTop="16dp"
@@ -46,20 +46,25 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+            android:id="@+id/sf_abc_input"
             android:layout_width="210dp"
-            android:layout_height="50dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="25dp"
             android:hint="ABC123"
-            tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="224dp" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send request"
+            app:layout_constraintBottom_toTopOf="@+id/sf_request_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="299dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+        <Button
+            android:id="@+id/sf_request_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="382dp"
+            android:text="Send request"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

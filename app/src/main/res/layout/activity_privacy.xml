@@ -89,9 +89,11 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="106dp"
+        android:layout_marginBottom="19dp"
         android:backgroundTint="@color/white"
         android:text="Do Not Disturb"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />

@@ -31,6 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="405dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:text="Search by ABC123"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

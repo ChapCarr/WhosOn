@@ -44,6 +44,8 @@
         android:layout_marginStart="110dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="373dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
         android:text="Change Profile Picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

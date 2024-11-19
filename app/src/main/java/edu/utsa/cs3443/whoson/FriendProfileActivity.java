@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +43,7 @@ public class FriendProfileActivity extends AppCompatActivity {
         Button fpMessageButton = findViewById(R.id.fp_message_button);
 
         fpMessageButton.setOnClickListener(v -> {
-            Intent intent = new Intent(FriendProfileActivity.this, MainActivity.class);
+            Intent intent = new Intent(FriendProfileActivity.this, MessageActivity.class);
             startActivity(intent);
         });
     }

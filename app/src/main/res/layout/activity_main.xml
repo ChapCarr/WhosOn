@@ -70,6 +70,17 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/addFriend_button" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="250dp"
+            android:layout_height="360dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/dall_e_2024_11_18_21_59_50___an_adorable_scene_featuring_a_penguin_and_a_corgi_sitting_side_by_side_at_a_desk__both_working_as_coders__the_penguin_is_black_and_white__wearing_glas" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

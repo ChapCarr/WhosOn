@@ -2,8 +2,7 @@
  Easily find who is on campus
 
 ## **1. Description**
-  # Study Buddy 
-  is a mobile application designed to help students easily see the status of their friends. The app allows users to track their friends' availability and location with three simple statuses:
+  Study Buddy is a mobile application designed to help students easily see the status of their friends. The app allows users to track their friends' availability and location with three simple statuses:
 
 1. **On Campus (Free)** - The user is on campus and available.
 2. **Busy** - The user is on campus but currently unavailable.

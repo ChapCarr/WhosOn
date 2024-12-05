@@ -55,10 +55,10 @@ public class FriendsList {
                 }
             }
         } catch (Exception e) {
-            // Log the exception for debugging purposes
+
             Log.e("loadFriendsList", "Error loading friends list", e);
         } finally {
-            // Close the scanner to avoid resource leaks
+            // Close scanner
             if (scan != null) {
                 scan.close();
             }

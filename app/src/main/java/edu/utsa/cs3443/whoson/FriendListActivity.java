@@ -35,8 +35,6 @@ public class FriendListActivity extends AppCompatActivity {
 
 
 
-
-
         ImageButton sbutton = findViewById(R.id.fl_setting_button);
         // Set OnClickListener
         sbutton.setOnClickListener(v -> {
@@ -60,13 +58,6 @@ public class FriendListActivity extends AppCompatActivity {
 
         LinearLayout verticalLayout = findViewById(R.id.ll_holder);
         verticalLayout.removeAllViews();
-
-
-
-
-
-
-
 
 
 

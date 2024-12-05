@@ -12,8 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.IOException;
 
 public class SearchFriendActivity extends AppCompatActivity {
 
@@ -56,19 +57,19 @@ public class SearchFriendActivity extends AppCompatActivity {
 
     private String searchFriendByCode(String code) {
         try {
-            // Open the CSV file
-            InputStream is = getResources().openRawResource(R.raw.friends1);
+            // Open the CSV file from the assets folder
+            InputStream is = getAssets().open("friends.csv");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] tokens = line.split(","); // Assuming CSV format is "ABC123,Friend Name"
+                String[] tokens = line.split(","); // abc123,name,status(ex: 'green' 'red' 'grey'
                 if (tokens.length > 1 && tokens[0].equalsIgnoreCase(code)) {
                     return tokens[1].trim(); // Return the friend's name
                 }
             }
             reader.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, "Error reading the CSV file.", Toast.LENGTH_SHORT).show();
         }

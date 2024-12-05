@@ -9,6 +9,11 @@
 - Rodolfo Hernandez
 - Boyu Chen
 ## **3. Getting Started**
+  ### **Requirements**
+    - Android Studio
+    - Java Development Kit (JDK)
+    - Gradle
+
 
 ## **4. Known Issues**
 - Dark Mode still needs implementation.

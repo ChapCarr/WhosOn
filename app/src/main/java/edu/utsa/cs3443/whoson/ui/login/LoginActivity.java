@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import edu.utsa.cs3443.whoson.MainActivity;
 import edu.utsa.cs3443.whoson.R;
 import edu.utsa.cs3443.whoson.ui.login.LoginViewModel;
 import edu.utsa.cs3443.whoson.ui.login.LoginViewModelFactory;
@@ -31,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+
+    private boolean hasLogged = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -117,6 +121,15 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Set login state to true when login button is clicked
+                hasLogged = true;
+
+                // Save login state to SharedPreferences
+                SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("is_logged_in", true);  // Set login state to true
+                editor.apply(); // Apply the changes asynchronously
+
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
@@ -132,5 +145,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean getLoginState(){
+        return hasLogged;
     }
 }

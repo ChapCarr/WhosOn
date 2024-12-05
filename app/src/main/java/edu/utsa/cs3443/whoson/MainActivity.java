@@ -8,15 +8,18 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.whoson.model.AppState;
 import edu.utsa.cs3443.whoson.ui.login.LoginActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean areButtonsEnabled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppState appState = AppState.getInstance(); //test
 
         setContentView(R.layout.activity_main);
 
@@ -25,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Button addFriendButton = findViewById(R.id.addFriend_button);
         Button loginButton = findViewById(R.id.login_button);
 
-        friendListButton.setEnabled(true); // Disable initially
-        addFriendButton.setEnabled(areButtonsEnabled); // Disable initially
+        friendListButton.setEnabled(appState.isLoggedIn()); // leave alone for now
+        addFriendButton.setEnabled(appState.isLoggedIn()); // test
 
         // Button to open Settings
         ImageButton settingButton = findViewById(R.id.setting_button);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         loginButton.setOnClickListener(v -> {
-            areButtonsEnabled = true;
+            appState.setLoggedIn(true);
             friendListButton.setEnabled(true);  // Enable  Button
             addFriendButton.setEnabled(true);
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);

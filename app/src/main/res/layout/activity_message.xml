@@ -65,17 +65,24 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="480dp"
+                android:layout_height="430dp"
                 android:layout_weight="1" />
 
             <EditText
-                android:id="@+id/editTextText3"
+                android:id="@+id/MessageText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="100"
                 android:ems="10"
                 android:inputType="text"
                 android:text="Message" />
+
+            <ImageButton
+                android:id="@+id/SendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+
         </LinearLayout>
     </ScrollView>
 

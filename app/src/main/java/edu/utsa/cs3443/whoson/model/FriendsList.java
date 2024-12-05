@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import edu.utsa.cs3443.whoson.FriendListActivity;
+import edu.utsa.cs3443.whoson.R;
 
 public class FriendsList {
 
@@ -18,40 +19,46 @@ public class FriendsList {
     public void loadFriendsList(FriendListActivity activity){
         AssetManager manager = activity.getAssets();
         Scanner scan = null;
-        String fileName = "friends.csv";
+        String fileName = "friends2.csv";
         try{
-            InputStream file = manager.open(fileName);
+            InputStream file = manager.open("friends2.csv");
             scan = new Scanner(file);
+            Friend test = new Friend("asd123", "test", "green");
+            this.friendsList.add(test);
             String useless = scan.nextLine();
             String line;
             String[] friend;
             while(scan.hasNextLine()){
                 line = scan.nextLine();
                 friend = line.split(",");
-                Friend person = new Friend(friend[0], friend[1], friend[2]);
-                this.friendsList.add(person);
-                this.abcList.add(friend[0]);
-                this.nameList.add(friend[1]);
-                this.statusList.add(friend[2]);
+                if (friend.length == 3) {
+                    Friend person = new Friend(friend[0], friend[1], friend[2]);
+                    this.friendsList.add(person);
+                    this.abcList.add(friend[0]);
+                    this.nameList.add(friend[1]);
+                    this.statusList.add(friend[2]);
+                }
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        }
+        catch (Exception e) {
+            //throw new RuntimeException(e);
         }
     }
 
     public ArrayList<Friend> getFriendsList() {
-        return friendsList;
+
+        return this.friendsList;
     }
 
     public ArrayList<String> getAbcList() {
-        return abcList;
+        return this.abcList;
     }
 
     public ArrayList<String> getNameList() {
-        return nameList;
+        return this.nameList;
     }
 
     public ArrayList<String> getStatusList() {
-        return statusList;
+        return this.statusList;
     }
 }

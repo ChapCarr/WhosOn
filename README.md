@@ -20,6 +20,20 @@ The app makes it easy for students to know when their friends are free to study 
     - Java Development Kit (JDK)
     - Gradle
 
+  ### **Cloning and Running the App**
+  1. Clone the repo
+    Here is a wonderful visual tutorial on how to clone a github repo into android studio 
+    https://www.youtube.com/watch?v=JSwRqOZo2Y8
+
+  2. Run the Project in the built in emulator 
+
+  3. Login
+    Click login and type your abc123 and name 
+   
+   4. Enjoy the app, now you logged in all buttons will be accessible. 
+    
+    
+
 
 ## **4. Known Issues**
 - Dark Mode still needs implementation.

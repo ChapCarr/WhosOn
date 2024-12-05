@@ -5,10 +5,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,24 +32,9 @@ public class FriendListActivity extends AppCompatActivity {
         friendList.loadFriendsList(this);
         ArrayList<Friend> friendlies = new ArrayList<>();
         friendlies = friendList.getFriendsList();
-        Friend ex = new Friend("asd123", "fatty", "green");
-        friendlies.add(ex);
-
-//        ArrayList<String> abcList = new ArrayList<>();
-//        ArrayList<String> nameList = new ArrayList<>();
-//        nameList.add("word");
-//        nameList.add("word");
-//        nameList.add("word");
-//        ArrayList<String> statusList = new ArrayList<>();
-//        for (Friend friend: friendlies){
-//
-//        }
 
 
-//        abcList = friendList.getAbcList();
-//        nameList = friendList.getNameList();
-//        statusList = friendList.getStatusList();
-        int counter = 0;
+
 
 
         ImageButton sbutton = findViewById(R.id.fl_setting_button);
@@ -76,43 +63,7 @@ public class FriendListActivity extends AppCompatActivity {
 
 
 
-//        LinearLayout horizontalLayout = new LinearLayout(this);
-//
-//        horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
-//        horizontalLayout.setLayoutParams(new LinearLayout.LayoutParams(
-//                ViewGroup.LayoutParams.MATCH_PARENT,
-//                ViewGroup.LayoutParams.WRAP_CONTENT
-//        ));
-//        horizontalLayout.setPadding(10, 10, 10, 10);
-//        horizontalLayout.setGravity(Gravity.CENTER);
-//
-//        // Creating and adding an ImageView to the horizontal LinearLayout
-////            ImageView imageView = new ImageView(this);
-////            int imageResource = getResources().getIdentifier(statusList.get(counter), "drawable", getPackageName());
-////            imageView.setImageResource(imageResource); // Set your image resource here
-////            imageView.setLayoutParams(new LinearLayout.LayoutParams(
-////                    200,
-////                    200
-////            ));
-////            imageView.setPadding(10, 10, 10, 10);
-////
-////            horizontalLayout.addView(imageView);
-//
-//        // Creating and adding a TextView to the horizontal LinearLayout
-//        TextView textView = new TextView(this);
-//        textView.setText("cunt");
-//        textView.setTextSize(18);
-//        textView.setTextColor(Color.BLACK);
-//        textView.setPadding(10, 10, 10, 10);
-//        textView.setLayoutParams(new LinearLayout.LayoutParams(
-//                0,
-//                ViewGroup.LayoutParams.WRAP_CONTENT,
-//                1 // Weight for equal distribution
-//        ));
-//        horizontalLayout.addView(textView);
-//
-//        // Adding the horizontal LinearLayout to the vertical LinearLayout
-//        verticalLayout.addView(horizontalLayout);
+
 
 
 
@@ -158,9 +109,34 @@ public class FriendListActivity extends AppCompatActivity {
             ));
             horizontalLayout.addView(textView2);
 
+            // Creating and adding a Button to the horizontal LinearLayout
+            Button button = new Button(this);
+            button.setText("View profile");  // Set the button text
+            button.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+            button.setPadding(20, 10, 20, 10);  // Optional padding for the button
+
+            // Optional: Set a click listener to handle button click events
+            button.setOnClickListener(v -> {
+                // Add your button click logic here
+                Toast.makeText(this, "Button clicked for " + friend.getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FriendListActivity.this, FriendProfileActivity.class);
+                intent.putExtra("name", friend.getName());
+                intent.putExtra("status", friend.getStatus());
+                startActivity(intent);
+            });
+
+            // Adding the button to the horizontal layout
+            horizontalLayout.addView(button);
+
+
             // Adding the horizontal LinearLayout to the vertical LinearLayout
             verticalLayout.addView(horizontalLayout);
-            counter++;
+
+
+
         }
 
 

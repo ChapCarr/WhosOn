@@ -57,7 +57,7 @@ public class SearchFriendActivity extends AppCompatActivity {
     private String searchFriendByCode(String code) {
         try {
             // Open the CSV file
-            InputStream is = getResources().openRawResource(R.raw.friends);
+            InputStream is = getResources().openRawResource(R.raw.friends1);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
             String line;
